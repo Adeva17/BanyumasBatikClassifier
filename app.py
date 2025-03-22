@@ -30,14 +30,14 @@ def predict_image(image):
     return class_name
 
 # Streamlit UI
-st.title("Batik Banyumasan Classifier")
-st.write("Upload an image to classify its Batik variety.")
+st.title("Batik Banyumasan Ancrit")
+st.write("Upload Batik Banyumasan untuk Klasifikasi")
 
-uploaded_file = st.file_uploader("Choose a Batik Image...", type=["jpg", "png", "jpeg"])
+uploaded_file = st.file_uploader("Pilih Gambar", type=["jpg", "png", "jpeg"])
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
     
     prediction = predict_image(image)
-    st.write(f"**Predicted Class:** {prediction}")
+    st.write(f"**Jenis Batik:** {prediction}")
